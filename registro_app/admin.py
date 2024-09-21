@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Registros, TipoDispositivo, Dispositivos
+from .models import Registro, TipoDispositivo, Dispositivo
 # Register your models here.
 
-admin.site.register(Registros)
+admin.site.register(Registro)
 admin.site.register(TipoDispositivo)
-admin.site.register(Dispositivos)
+admin.site.register(Dispositivo)
