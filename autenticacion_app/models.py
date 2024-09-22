@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class CargoUsuario(models.Model):
+class Cargo(models.Model):
     idCargo = models.AutoField(primary_key=True)
     cargo = models.CharField(max_length=255)
 

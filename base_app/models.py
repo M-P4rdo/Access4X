@@ -10,7 +10,7 @@ class Persona(models.Model):
     nombre = models.CharField(max_length=255)
     apellido = models.CharField(max_length=255)
     entidad = models.ForeignKey(M_autenticacion.Entidad, on_delete=models.PROTECT)
-    correo = models.EmailField(max_length=255)
+    correo = models.EmailField(max_length=320)
 
     class Meta:
         abstract = True
@@ -20,7 +20,8 @@ class Persona(models.Model):
 
 class Usuario(Persona):
     idUsuario = models.AutoField(primary_key=True)
-    cargo = models.ForeignKey(M_autenticacion.CargoUsuario, on_delete=models.PROTECT)
+    cargo = models.ForeignKey(M_autenticacion.Cargo, on_delete=models.PROTECT)
+    diaRegistro = models.DateTimeField(auto_now=True)
 
 class Administrador(Persona):
     user = models.OneToOneField(User, on_delete=models.PROTECT, related_name='admin_profile')
